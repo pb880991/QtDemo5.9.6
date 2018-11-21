@@ -1,0 +1,22 @@
+1.安装完git后，设置用户名和邮箱
+git config --global user.name "你自己的用户名"
+git config --global user.email "你自己的邮箱"
+2.生成密匙，注意参数大小写并且不要设置密码（直接一直回车）。
+ssh-keygen -t rsa -C"你自己的邮箱"
+生成后的公匙文件在 C:\Users\用户名\.ssh\id_rsa.pub
+打开密匙文件并复制其中内容将该密匙添加到github  (Settings-> SSH and GPG keys-> new SSH key），然后添加公共密钥
+3.在GitHub中新建一个库，创建成功后会出现设置提示信息界面，可以看到HTTPS SSH以.git结尾
+4.打开工具/Tools-->选项/Options -->版本控制-->Git，在Prepend toPATH中设置Git的所在目录后确定并重启QtCreator
+5.在一个文件夹下输入
+git init
+git remote add origin https://github.com/******.git
+编辑项目，对该仓库文件进行修改编辑
+git add .或者git add *将改动加到暂存区
+git commit -m  “提交说明”
+git push origin master 将本地更改推送到远程master分支，需要输入用户名和密码
+可能需要git pull origin master把远程仓库内容拉下来再进行push
+
+如果另外新建一个文件夹作为仓库，则从第五步开始就行了
+
+
+
